@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colin Timofei — Test Page</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      color: #222;
+    }
+    h1 { margin-bottom: 0.25rem; }
+    .muted { color: #666; }
+    section { margin-top: 2rem; }
+    button { padding: 0.5rem 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Colin Timofei</h1>
+    <p class="muted">Test page — if you can see this, GitHub Pages is working.</p>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Test Company</strong> — Placeholder Role (2024–present)</li>
+      <li><strong>Another Company</strong> — Placeholder Role (2022–2024)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>JS Test</h2>
+    <button id="test-btn">Click me</button>
+    <p id="test-output" class="muted">Clicked 0 times</p>
+  </section>
+
+  <footer>
+    <p class="muted">Last updated: <span id="date"></span></p>
+  </footer>
+
+  <script>
+    let count = 0;
+    document.getElementById('test-btn').addEventListener('click', () => {
+      count++;
+      document.getElementById('test-output').textContent = `Clicked ${count} time${count === 1 ? '' : 's'}`;
+    });
+    document.getElementById('date').textContent = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
