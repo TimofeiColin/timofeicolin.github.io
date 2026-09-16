@@ -1,0 +1,107 @@
+<main class="cv">
+  <header class="head">
+    <h1 class="head__name">
+      {{ name }}<span class="head__title">{{ title }}</span>
+    </h1>
+
+    <ul class="contacts">
+      @for (c of contacts; track c.label) {
+        <li class="contacts__item">
+          @if (c.icon === 'linkedin') {
+            <svg class="icon icon--svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
+              />
+            </svg>
+          } @else {
+            <mat-icon class="icon">{{ c.icon }}</mat-icon>
+          }
+
+          @if (c.href) {
+            <a class="contacts__link" [href]="c.href">{{ c.label }}</a>
+          } @else {
+            <span>{{ c.label }}</span>
+          }
+        </li>
+      }
+    </ul>
+
+    <p class="summary">{{ summary }}</p>
+  </header>
+
+  <div class="cols">
+    <div class="cols__main">
+      <section class="section">
+        <h2 class="section__title">
+          <mat-icon class="section__icon">work</mat-icon>Professional Experience
+        </h2>
+
+        @for (job of experience; track job.company) {
+          <article class="job">
+            <p class="job__org">
+              <strong>{{ job.company }},</strong>&nbsp;<em>{{ job.role }}</em>
+            </p>
+            <p class="job__dates">{{ job.dates }}</p>
+
+            @for (project of job.projects; track $index) {
+              @if (project.name) {
+                <p class="job__project">{{ project.name }}</p>
+              }
+              <ul class="bullets">
+                @for (bullet of project.bullets; track bullet) {
+                  <li>{{ bullet }}</li>
+                }
+              </ul>
+            }
+          </article>
+        }
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">
+          <mat-icon class="section__icon">school</mat-icon>Education
+        </h2>
+
+        @for (e of education; track e.school) {
+          <article class="edu">
+            <p class="edu__org">
+              <strong>{{ e.school }},</strong>&nbsp;<em>{{ e.degree }}</em>
+            </p>
+            <p class="edu__meta">{{ e.dates }} | {{ e.location }}</p>
+          </article>
+        }
+      </section>
+    </div>
+
+    <aside class="cols__side">
+      <section class="section">
+        <h2 class="section__title">
+          <mat-icon class="section__icon">psychology</mat-icon>Technical Skills
+        </h2>
+        <ul class="skills">
+          @for (skill of skills; track skill) {
+            <li>{{ skill }}</li>
+          }
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">
+          <mat-icon class="section__icon">public</mat-icon>Languages
+        </h2>
+        <ul class="langs">
+          @for (lang of languages; track lang.name) {
+            <li class="langs__row">
+              <span>{{ lang.name }}</span>
+              <span class="dots" [attr.aria-label]="lang.level + ' out of 5'">
+                @for (d of dots; track d) {
+                  <i class="dot" [class.dot--off]="d > lang.level"></i>
+                }
+              </span>
+            </li>
+          }
+        </ul>
+      </section>
+    </aside>
+  </div>
+</main>

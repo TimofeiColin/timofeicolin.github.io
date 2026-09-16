@@ -1,0 +1,26 @@
+// Angular Material theme. Only MatIcon is used from the component library, but the
+// theme is kept so Material's system variables stay available.
+@use "@angular/material" as mat;
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Alegreya,
+      density: 0,
+    )
+  );
+}
+
+body {
+  color-scheme: light;
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  color: #000;
+  font-family: Alegreya, Georgia, "Times New Roman", serif;
+}
