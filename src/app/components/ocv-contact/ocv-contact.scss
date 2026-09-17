@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.icon {
+  flex: none;
+  color: var(--accent);
+  font-size: 1.15em;
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

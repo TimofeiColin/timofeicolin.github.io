@@ -1,0 +1,6 @@
+<span>{{ language().name }}</span>
+<span class="dots" [attr.aria-label]="language().level + ' out of ' + dots.length">
+  @for (d of dots; track d) {
+    <i class="dot" [class.dot--off]="d > language().level"></i>
+  }
+</span>

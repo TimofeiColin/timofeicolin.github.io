@@ -26,17 +26,29 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    const titles = Array.from(compiled.querySelectorAll('.section__title')).map((el) =>
-      el.textContent?.trim()
-    );
-    expect(titles.length).toBe(4);
+    // The mat-icon ligature is a child of the <h2>, so it is part of textContent.
+    const titles = Array.from(compiled.querySelectorAll('[ocv-section-title]')).map((el) => {
+      const icon = el.querySelector('mat-icon')?.textContent?.trim() ?? '';
+      return {
+        icon,
+        label: (el.textContent ?? '').trim().slice(icon.length).trim()
+      };
+    });
+
+    expect(titles).toEqual([
+      { icon: 'work', label: 'Professional Experience' },
+      { icon: 'school', label: 'Education' },
+      { icon: 'interests', label: 'Hobbies' },
+      { icon: 'psychology', label: 'Technical Skills' },
+      { icon: 'public', label: 'Languages' }
+    ]);
   });
 
   it('should mark English as four dots out of five', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    const rows = compiled.querySelectorAll('.langs__row');
+    const rows = compiled.querySelectorAll('[ocv-language]');
     const english = rows[rows.length - 1];
     expect(english.textContent).toContain('English');
     expect(english.querySelectorAll('.dot').length).toBe(5);

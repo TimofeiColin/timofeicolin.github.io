@@ -1,34 +1,32 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 
-import {
-  CONTACTS,
-  DOT_COUNT,
-  EDUCATION,
-  EXPERIENCE,
-  LANGUAGES,
-  NAME,
-  SKILLS,
-  SUMMARY,
-  TITLE
-} from './cv-data';
+import { CV } from '../cv-data';
+import { OcvHeader } from './components/ocv-header/ocv-header';
+import { OcvContact } from './components/ocv-contact/ocv-contact';
+import { OcvSummary } from './components/ocv-summary/ocv-summary';
+import { OcvJob } from './components/ocv-job/ocv-job';
+import { OcvEducation } from './components/ocv-education/ocv-education';
+import { OcvSectionTitle } from './components/ocv-section-title/ocv-section-title';
+import { OcvSkillGroup } from './components/ocv-skill-group/ocv-skill-group';
+import { OcvLanguage } from './components/ocv-language/ocv-language';
+import { OcvHobby } from './components/ocv-hobby/ocv-hobby';
 
 @Component({
   selector: 'app-root',
-  imports: [MatIconModule],
+  imports: [
+    OcvHeader,
+    OcvContact,
+    OcvSummary,
+    OcvJob,
+    OcvEducation,
+    OcvSectionTitle,
+    OcvSkillGroup,
+    OcvLanguage,
+    OcvHobby
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly name = NAME;
-  protected readonly title = TITLE;
-  protected readonly summary = SUMMARY;
-  protected readonly contacts = CONTACTS;
-  protected readonly experience = EXPERIENCE;
-  protected readonly education = EDUCATION;
-  protected readonly skills = SKILLS;
-  protected readonly languages = LANGUAGES;
-
-  /** [1..5], used to render the language proficiency dots. */
-  protected readonly dots = Array.from({ length: DOT_COUNT }, (_, i) => i + 1);
+  protected readonly cv = CV;
 }

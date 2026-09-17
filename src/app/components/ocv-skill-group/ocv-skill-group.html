@@ -1,0 +1,11 @@
+<mat-expansion-panel class="panel" [expanded]="group().expanded ?? true">
+  <mat-expansion-panel-header class="panel__header">
+    <mat-panel-title class="title">{{ group().name }}</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <ul class="items">
+    @for (skill of group().skills; track skill) {
+      <li>{{ skill }}</li>
+    }
+  </ul>
+</mat-expansion-panel>

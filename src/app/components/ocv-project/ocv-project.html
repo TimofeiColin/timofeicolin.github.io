@@ -1,0 +1,9 @@
+@if (project().name) {
+  <p class="name">{{ project().name }}</p>
+}
+
+<ul class="bullets">
+  @for (bullet of project().bullets; track bullet) {
+    <li>{{ bullet }}</li>
+  }
+</ul>

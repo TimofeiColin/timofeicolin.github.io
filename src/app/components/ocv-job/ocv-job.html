@@ -1,0 +1,14 @@
+<mat-expansion-panel class="panel" [expanded]="job().expanded ?? false">
+  <mat-expansion-panel-header class="panel__header">
+    <mat-panel-title class="org">
+      <strong>{{ job().company }},</strong>&nbsp;<em>{{ job().role }}</em>
+    </mat-panel-title>
+    <mat-panel-description class="dates">
+      {{ job().startDate }} – {{ job().endDate }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  @for (project of job().projects; track $index) {
+    <ocv-project [project]="project" />
+  }
+</mat-expansion-panel>

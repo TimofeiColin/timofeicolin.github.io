@@ -1,0 +1,11 @@
+@if (contact().svg) {
+  <img class="icon" [src]="contact().svg" alt="" />
+} @else {
+  <mat-icon class="icon">{{ contact().icon }}</mat-icon>
+}
+
+@if (contact().href) {
+  <a class="link" [href]="contact().href">{{ contact().label }}</a>
+} @else {
+  <span>{{ contact().label }}</span>
+}

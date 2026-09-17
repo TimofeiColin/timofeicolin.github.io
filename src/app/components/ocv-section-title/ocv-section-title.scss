@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0 0 0.85em;
+  padding-bottom: 0.3em;
+  border-bottom: var(--rule) solid var(--accent);
+  font-size: 1.25em;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.icon {
+  flex: none;
+  font-size: 1.1em;
+  width: 1.1em;
+  height: 1.1em;
+  color: var(--ink);
+}
+
+@media print {
+  :host {
+    --rule: 1.5pt;
+  }
+}

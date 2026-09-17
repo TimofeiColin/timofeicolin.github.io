@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 0.5em;
+}
+
+.dots {
+  display: flex;
+  flex: none;
+  gap: 0.59em;
+}
+
+.dot {
+  width: 0.69em;
+  height: 0.69em;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.dot--off {
+  background: var(--dot-off);
+}

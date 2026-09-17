@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  --mat-expansion-container-background-color: #fff;
+  padding-bottom: 10px;
+}
+
+.panel__header,
+.panel__header.mat-expanded {
+  height: auto;
+  min-height: 2.6em;
+  padding-block: 0.55em;
+}
+
+.title {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.items {
+  margin: 0;
+  padding-left: 1.05em;
+  list-style: none;
+}
+
+.items li {
+  position: relative;
+  margin: 0;
+}
+
+.items li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: -0.78em;
+  width: 0.19em;
+  height: 0.19em;
+  border-radius: 50%;
+  background: currentcolor;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin-top: 0.5em;
+}
+
+.images img {
+  max-width: 100%;
+  max-height: 12em;
+  border-radius: 4px;
+}

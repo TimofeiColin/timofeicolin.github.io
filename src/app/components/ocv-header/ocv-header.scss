@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.name {
+  margin: 0;
+  font-size: 2.7em;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.position {
+  display: block;
+  font-size: 0.58em;
+  font-style: italic;
+  font-weight: 400;
+  padding-top: 5px;
+}
+
+@media (max-width: 720px) {
+  .name {
+    font-size: 1.9em;
+  }
+
+  .position {
+    font-size: 0.62em;
+  }
+}

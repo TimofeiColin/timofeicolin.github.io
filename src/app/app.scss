@@ -25,21 +25,6 @@
 
 /* ---------------------------------------------------------- header */
 
-.head__name {
-  margin: 0;
-  font-size: 2.7em;
-  font-weight: 700;
-  line-height: 1.05;
-}
-
-.head__title {
-  margin-left: 0.35em;
-  font-size: 0.58em;
-  font-style: italic;
-  font-weight: 400;
-  white-space: nowrap;
-}
-
 .contacts {
   display: grid;
   grid-template-columns: 52% 48%;
@@ -47,38 +32,6 @@
   margin: 0.65em 0 0;
   padding: 0;
   list-style: none;
-}
-
-.contacts__item {
-  display: flex;
-  align-items: center;
-  gap: 0.6em;
-}
-
-.contacts__link {
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.icon {
-  flex: none;
-  color: var(--accent);
-  font-size: 1.15em;
-  width: 1.15em;
-  height: 1.15em;
-}
-
-.icon--svg {
-  fill: currentcolor;
-}
-
-.summary {
-  margin: 1.5em 0 0;
-  text-align: left;
 }
 
 /* ---------------------------------------------------------- columns */
@@ -106,108 +59,19 @@
   margin-top: 2.4em;
 }
 
-.section__title {
-  display: flex;
-  align-items: center;
-  gap: 0.45em;
-  margin: 0 0 0.85em;
-  padding-bottom: 0.3em;
-  border-bottom: var(--rule) solid var(--accent);
-  font-size: 1.25em;
-  font-weight: 700;
-  letter-spacing: 0.055em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.section__icon {
-  flex: none;
-  font-size: 1.1em;
-  width: 1.1em;
-  height: 1.1em;
-  color: var(--ink);
-}
-
 /* ---------------------------------------------------------- experience */
 
-.job + .job,
-.edu + .edu {
+ocv-job + ocv-job,
+ocv-education + ocv-education {
   margin-top: 1.1em;
-}
-
-.job__org,
-.edu__org {
-  margin: 0;
-}
-
-.job__dates,
-.edu__meta {
-  margin: 0;
-}
-
-.job__project {
-  margin: 0.25em 0 0;
-}
-
-// Round markers drawn by hand: the disc glyph in Alegreya reads as a diamond.
-.bullets {
-  margin: 0;
-  padding-left: 1.05em;
-  list-style: none;
-}
-
-.bullets li {
-  position: relative;
-  margin: 0;
-}
-
-.bullets li::before {
-  content: "";
-  position: absolute;
-  top: 0.55em;
-  left: -0.78em;
-  width: 0.19em;
-  height: 0.19em;
-  border-radius: 50%;
-  background: currentcolor;
 }
 
 /* ---------------------------------------------------------- side column */
 
-.skills,
 .langs {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.skills li {
-  margin-bottom: 0.5em;
-}
-
-.langs__row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1em;
-  margin-bottom: 0.5em;
-}
-
-.dots {
-  display: flex;
-  flex: none;
-  gap: 0.59em;
-}
-
-.dot {
-  width: 0.69em;
-  height: 0.69em;
-  border-radius: 50%;
-  background: var(--ink);
-}
-
-.dot--off {
-  background: var(--dot-off);
 }
 
 /* ---------------------------------------------------------- responsive */
@@ -219,17 +83,6 @@
 
   .cv {
     padding: 32px 22px 40px;
-  }
-
-  .head__name {
-    font-size: 1.9em;
-  }
-
-  .head__title {
-    display: block;
-    margin-left: 0;
-    font-size: 0.62em;
-    white-space: normal;
   }
 
   .contacts {
@@ -272,17 +125,11 @@
     margin-top: 0;
   }
 
-  .section__title {
-    --rule: 1.5pt;
-  }
-
   // Only the small blocks avoid breaking; a section can be taller than a page.
-  .job,
-  .edu {
+  ocv-job,
+  ocv-education,
+  ocv-skill-group,
+  ocv-hobby {
     break-inside: avoid;
-  }
-
-  .contacts__link {
-    text-decoration: none;
   }
 }
