@@ -6,11 +6,11 @@ export const CV: Cv = {
   position: 'Backend Engineer / Full-Stack Developer',
 
   summary:
-    'Full-Stack Developer with 4+ years of experience building scalable web applications ' +
-    'using TypeScript, NestJS, React, and Angular. Experienced in backend architecture, ' +
-    'API integrations, performance optimization, and modern frontend development. ' +
-    'Contributed to large production systems, backend migrations, and technical leadership ' +
-    'across multiple commercial projects.',
+    'Backend engineer with 4+ years building production systems with TypeScript, Node.js, and ' +
+    'NestJS. Rebuilt a production backend from Ruby to NestJS and led backend development on ' +
+    'a second product, owning services end to end: PostgreSQL data modeling, REST APIs, ' +
+    'real-time systems, background jobs, integrations, and AI-powered features. Also built ' +
+    'frontend features with Angular and React.',
 
   contacts: [
     { icon: 'mail', label: 'timofeicolin@gmail.com', href: 'mailto:timofeicolin@gmail.com' },
@@ -26,7 +26,7 @@ export const CV: Cv = {
   jobs: [
     {
       company: 'GLOBAL WEB',
-      role: 'Full Stack Developer',
+      role: 'Full-Stack Developer',
       expanded: true,
       startDate: '01/2025',
       endDate: '04/2026',
@@ -34,26 +34,30 @@ export const CV: Cv = {
         {
           name: 'Hubble Project — Full-Stack Developer',
           bullets: [
-            'Maintained and expanded backend functionality',
-            'Contributed to Chrome extension development',
-            'Developed website features and pages',
-            'Participated in website redesign and performance optimization',
+            'Continued Hubble from Eligence as primary backend engineer: 95+ features, 280+ merged PRs',
+            'Designed PostgreSQL data models with Prisma, authoring 50+ production migrations',
+            'Built real-time chat, token streaming, and live events with Socket.IO and Redis',
+            'Integrated LLM workflows with OpenAI and Langflow',
+            'Created Google Workspace/ChromeOS integrations and knowledge-base ingestion with AWS S3 and Textract',
+            'Added multi-tenant authentication, BullMQ jobs, SendGrid emails, and Sentry/Prometheus monitoring',
+            'Contributed to the Chrome extension and website, including redesign and performance work',
           ],
         },
         {
           name: 'Yours Truly Project — Lead Backend Developer',
           bullets: [
-            'Designed and developed backend logic',
-            'Integrated APIs and third-party services',
-            'Maintained scalable server-side architecture',
-            'Optimized system performance and data workflows',
+            'Led backend development of the NestJS API, with ~50% of all commits and 60+ merged PRs',
+            'Designed the PostgreSQL/Prisma data model: 25 domain models and 36 production migrations',
+            'Built memory, event, knowledge, and media APIs with shared pagination, filtering, and access control',
+            'Added multi-user sharing, API-key authentication, AWS S3 media storage, and external ML integrations',
+            'Set up worker queues, scheduled jobs, health checks, monitoring, and Swagger/OpenAPI docs',
           ],
         },
       ],
     },
     {
       company: 'Eligence',
-      role: 'Full Stack Developer',
+      role: 'Full-Stack Developer',
       expanded: true,
       startDate: '01/2022',
       endDate: '12/2024',
@@ -61,19 +65,21 @@ export const CV: Cv = {
         {
           name: 'Hubble Project — Backend Developer',
           bullets: [
-            'Rewrote the application backend from Ruby to NestJS',
-            'Integrated third-party APIs and services',
-            'Improved backend scalability and maintainability',
-            'Optimized application performance and system architecture',
+            'Rebuilt the backend from Ruby to NestJS/TypeScript, authoring the initial codebase',
+            'Delivered 215+ tickets and 500+ merged PRs',
+            'Architected the NestJS API with PostgreSQL and Prisma, authoring 80+ production migrations',
+            'Shipped Stripe subscription billing, Redis/Bull background jobs, and Socket.IO real-time features',
+            'Built multi-tenant authentication (Google OAuth, JWT), company-scoped access control, and onboarding',
+            'Developed OpenAI-powered support, reporting/export, transactional emails, and Sentry/Swagger tooling',
           ],
         },
         {
           name: 'Apprentice Project — Full-Stack Developer',
           bullets: [
-            'Participated in website development',
-            'Contributed to mobile application redesign',
-            'Created interactive demos and platform features',
-            'Collaborated on frontend and backend improvements',
+            'Developed and maintained web application features across frontend and backend components',
+            'Contributed to the redesign and modernization of the mobile application',
+            'Implemented interactive demos and platform features based on product requirements',
+            'Collaborated on application improvements, debugging, and feature delivery',
           ],
         },
       ],
@@ -167,6 +173,10 @@ export const CV: Cv = {
         'Caching',
         'Background Jobs',
         'BullMQ',
+        'Socket.IO',
+        'Swagger/OpenAPI',
+        'JWT',
+        'Google OAuth',
       ],
     },
     {
@@ -177,7 +187,12 @@ export const CV: Cv = {
     {
       name: 'Cloud & Infrastructure',
       expanded: true,
-      skills: ['AWS', 'Amazon S3', 'Docker', 'Git', 'CI/CD'],
+      skills: ['AWS', 'AWS S3', 'AWS Textract', 'Docker', 'Git', 'CI/CD'],
+    },
+    {
+      name: 'Monitoring',
+      expanded: true,
+      skills: ['Sentry', 'Prometheus'],
     },
     {
       name: 'AI & Integrations',
@@ -185,14 +200,14 @@ export const CV: Cv = {
       skills: ['OpenAI API', 'Langflow', 'Google APIs', 'Google Admin SDK', 'Stripe', 'SendGrid'],
     },
     {
-      name: 'AI Development Tools',
-      expanded: true,
-      skills: ['Claude Code', 'ChatGPT', 'GitHub Copilot'],
-    },
-    {
       name: 'Frontend',
       expanded: true,
       skills: ['Angular', 'React', 'HTML5', 'CSS3', 'Tailwind CSS'],
+    },
+    {
+      name: 'AI Development Tools',
+      expanded: true,
+      skills: ['Claude Code', 'ChatGPT', 'GitHub Copilot'],
     },
     {
       name: 'Currently Learning',
