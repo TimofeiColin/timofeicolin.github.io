@@ -6,11 +6,10 @@ export const CV: Cv = {
   position: 'Backend Engineer / Full-Stack Developer',
 
   summary:
-    'Backend engineer with 4+ years building production systems with TypeScript, Node.js, and ' +
-    'NestJS. Rebuilt a production backend from Ruby to NestJS and led backend development on ' +
-    'a second product, owning services end to end: PostgreSQL data modeling, REST APIs, ' +
-    'real-time systems, background jobs, integrations, and AI-powered features. Also built ' +
-    'frontend features with Angular and React.',
+  'Backend engineer with 4+ years building production systems with TypeScript, Node.js, and ' +
+  'NestJS. Experienced in backend architecture, PostgreSQL data modeling, REST APIs, real-time ' +
+  'systems, background jobs, integrations, and AI-powered features. Owned backend services ' +
+  'end to end, with additional frontend experience in Angular and React.',
 
   contacts: [
     { icon: 'mail', label: 'timofeicolin@gmail.com', href: 'mailto:timofeicolin@gmail.com' },
@@ -48,7 +47,7 @@ export const CV: Cv = {
           bullets: [
             'Led backend development of the NestJS API, with ~50% of all commits and 60+ merged PRs',
             'Designed the PostgreSQL/Prisma data model: 25 domain models and 36 production migrations',
-            'Built memory, event, knowledge, and media APIs with shared pagination, filtering, and access control',
+            'Built APIs for memory, event, knowledge and media with shared pagination, filtering, and access control',
             'Added multi-user sharing, API-key authentication, AWS S3 media storage, and external ML integrations',
             'Set up worker queues, scheduled jobs, health checks, monitoring, and Swagger/OpenAPI docs',
           ],
@@ -66,7 +65,7 @@ export const CV: Cv = {
           name: 'Hubble Project — Backend Developer',
           bullets: [
             'Rebuilt the backend from Ruby to NestJS/TypeScript, authoring the initial codebase',
-            'Delivered 215+ tickets and 500+ merged PRs',
+            'Delivered 215+ tickets and contributed to 500+ reviewed pull requests',
             'Architected the NestJS API with PostgreSQL and Prisma, authoring 80+ production migrations',
             'Shipped Stripe subscription billing, Redis/Bull background jobs, and Socket.IO real-time features',
             'Built multi-tenant authentication (Google OAuth, JWT), company-scoped access control, and onboarding',
