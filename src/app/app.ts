@@ -10,6 +10,7 @@ import { OcvSectionTitle } from './components/ocv-section-title/ocv-section-titl
 import { OcvSkillGroup } from './components/ocv-skill-group/ocv-skill-group';
 import { OcvLanguage } from './components/ocv-language/ocv-language';
 import { OcvHobby } from './components/ocv-hobby/ocv-hobby';
+import { OcvPrintButton } from './components/ocv-print-button/ocv-print-button';
 
 @Component({
   selector: 'ocv-root',
@@ -23,6 +24,7 @@ import { OcvHobby } from './components/ocv-hobby/ocv-hobby';
     OcvSkillGroup,
     OcvLanguage,
     OcvHobby,
+    OcvPrintButton,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

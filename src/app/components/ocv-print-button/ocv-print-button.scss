@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+
+:host {
+  display: block;
+
+  @include mat.button-overrides(
+    (
+      outlined-container-shape: 3px,
+      outlined-outline-color: #dcdcdc,
+      outlined-label-text-color: var(--ink),
+      outlined-label-text-font: inherit,
+      outlined-label-text-size: 0.9em,
+      outlined-label-text-weight: 400,
+      outlined-label-text-tracking: normal,
+      outlined-state-layer-color: var(--ink),
+      outlined-ripple-color: rgb(0 0 0 / 10%),
+    )
+  );
+}
+
+@media print {
+  :host {
+    display: none;
+  }
+}

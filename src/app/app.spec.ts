@@ -53,4 +53,14 @@ describe('App', () => {
     expect(english.querySelectorAll('.dot').length).toBe(5);
     expect(english.querySelectorAll('.dot--off').length).toBe(1);
   });
+
+  it('should open the print dialog from the print button', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const print = vi.spyOn(window, 'print').mockImplementation(() => {});
+    const compiled = fixture.nativeElement as HTMLElement;
+    compiled.querySelector<HTMLButtonElement>('ocv-print-button button')!.click();
+    expect(print).toHaveBeenCalledOnce();
+    print.mockRestore();
+  });
 });
