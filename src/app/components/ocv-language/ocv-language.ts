@@ -1,13 +1,13 @@
 import { Component, input } from '@angular/core';
 
-import { Language } from '../../../cv.model';
+import { Language } from '@src/cv.model';
 
 const DOT_COUNT = 5;
 
 @Component({
   selector: 'li[ocv-language]',
   templateUrl: './ocv-language.html',
-  styleUrl: './ocv-language.scss'
+  styleUrl: './ocv-language.scss',
 })
 export class OcvLanguage {
   readonly language = input.required<Language>();

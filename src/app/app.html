@@ -1,14 +1,16 @@
 <main class="cv">
-  <header class="head">
+  <header>
     <ocv-header [name]="cv.name" [position]="cv.position" />
 
-    <ul class="contacts">
-      @for (c of cv.contacts; track c.label) {
-        <li ocv-contact [contact]="c"></li>
-      }
-    </ul>
+    <div class="intro">
+      <ul class="contacts">
+        @for (c of cv.contacts; track c.label) {
+          <li ocv-contact [contact]="c"></li>
+        }
+      </ul>
 
-    <ocv-summary [text]="cv.summary" />
+      <ocv-summary [text]="cv.summary" />
+    </div>
   </header>
 
   <div class="cols">
@@ -29,7 +31,7 @@
         }
       </section>
 
-      <section class="section">
+      <section class="section section--hobbies">
         <h2 ocv-section-title icon="interests">Hobbies</h2>
 
         @for (hobby of cv.hobbies; track hobby.name) {
@@ -49,7 +51,7 @@
 
       <section class="section">
         <h2 ocv-section-title icon="public">Languages</h2>
-        <ul class="langs">
+        <ul>
           @for (lang of cv.languages; track lang.name) {
             <li ocv-language [language]="lang"></li>
           }

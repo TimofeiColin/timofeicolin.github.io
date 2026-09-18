@@ -1,6 +1,4 @@
-// Angular Material theme. Only MatIcon is used from the component library, but the
-// theme is kept so Material's system variables stay available.
-@use "@angular/material" as mat;
+@use '@angular/material' as mat;
 
 html {
   height: 100%;
@@ -22,5 +20,130 @@ body {
   min-height: 100%;
   background-color: #fff;
   color: #000;
-  font-family: Alegreya, Georgia, "Times New Roman", serif;
+  font-family: Alegreya, Georgia, 'Times New Roman', serif;
+}
+
+.cv {
+  --accent: #ff9401;
+  --ink: #000;
+  --dot-off: #d9d9d9;
+  --rule: 2px;
+
+  @include mat.expansion-overrides(
+    (
+      container-background-color: #fff,
+      container-shape: 0,
+      container-elevation-shadow: none,
+      header-indicator-color: var(--ink),
+      header-collapsed-state-height: auto,
+      header-expanded-state-height: auto,
+    )
+  );
+
+  p {
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bullets {
+    padding-left: 1.05em;
+  }
+
+  .bullets li {
+    position: relative;
+  }
+
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    top: 0.55em;
+    left: -0.78em;
+    width: 0.19em;
+    height: 0.19em;
+    border-radius: 50%;
+    background: currentcolor;
+  }
+
+  .mat-expansion-panel {
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .mat-expansion-panel-header,
+  .mat-expansion-panel-body {
+    padding-inline: 0;
+  }
+
+  .mat-expansion-panel-header {
+    padding-block: 0.45em;
+  }
+
+  .mat-expansion-panel-body {
+    padding-top: 0;
+    padding-bottom: 0.75em;
+  }
+
+  .mat-expansion-panel-header-title,
+  .mat-expansion-panel-header-description {
+    color: inherit;
+    font-size: inherit;
+  }
+
+  .mat-expansion-panel-header-title {
+    flex: 1 1 auto;
+    margin: 0;
+  }
+
+  .mat-expansion-indicator svg {
+    width: 1.75em;
+    height: 1.75em;
+    margin: 0;
+  }
+
+  .mat-expansion-indicator {
+    transition: opacity 150ms;
+  }
+
+  .mat-expansion-panel:has(.mat-expansion-panel-header:focus-visible) {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+
+  @media (hover: hover) {
+    .mat-expansion-indicator {
+      opacity: 0;
+    }
+
+    .mat-expansion-panel:not(.mat-expanded) .mat-expansion-indicator {
+      opacity: 0.45;
+    }
+
+    .mat-expansion-panel-header:hover .mat-expansion-indicator,
+    .mat-expansion-panel-header:focus-visible .mat-expansion-indicator {
+      opacity: 1;
+    }
+  }
+
+  @media (hover: none) {
+    .mat-expansion-panel.mat-expanded .mat-expansion-indicator {
+      opacity: 0;
+    }
+  }
+
+  @media print {
+    .mat-expansion-indicator {
+      display: none;
+    }
+  }
+
+  @media (max-width: 720px) {
+    ocv-job .mat-expansion-panel-header .mat-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 }

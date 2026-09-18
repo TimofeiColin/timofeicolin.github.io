@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "ocv",
       "architect": {
         "build": {
           "builder": "@angular/build:application",

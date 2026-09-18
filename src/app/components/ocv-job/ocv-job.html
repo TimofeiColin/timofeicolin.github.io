@@ -1,7 +1,9 @@
-<mat-expansion-panel class="panel" [expanded]="job().expanded ?? false">
-  <mat-expansion-panel-header class="panel__header">
-    <mat-panel-title class="org">
-      <strong>{{ job().company }},</strong>&nbsp;<em>{{ job().role }}</em>
+<mat-expansion-panel [expanded]="job().expanded ?? false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <span
+        ><strong>{{ job().company }},</strong>&nbsp;<em>{{ job().role }}</em></span
+      >
     </mat-panel-title>
     <mat-panel-description class="dates">
       {{ job().startDate }} – {{ job().endDate }}

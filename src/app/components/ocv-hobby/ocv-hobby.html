@@ -1,11 +1,11 @@
-<mat-expansion-panel class="panel" [expanded]="hobby().expanded ?? false">
-  <mat-expansion-panel-header class="panel__header">
-    <mat-panel-title class="title">{{ hobby().name }}</mat-panel-title>
+<mat-expansion-panel [expanded]="hobby().expanded ?? false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{ hobby().name }}</mat-panel-title>
   </mat-expansion-panel-header>
 
-  @if (hobby().elements?.length) {
-    <ul class="items">
-      @for (item of hobby().elements; track item) {
+  @if (hobby().items?.length) {
+    <ul class="bullets">
+      @for (item of hobby().items; track item) {
         <li>{{ item }}</li>
       }
     </ul>

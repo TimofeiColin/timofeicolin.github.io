@@ -1,11 +1,11 @@
-<mat-expansion-panel class="panel" [expanded]="group().expanded ?? true">
-  <mat-expansion-panel-header class="panel__header">
-    <mat-panel-title class="title">{{ group().name }}</mat-panel-title>
+<mat-expansion-panel [expanded]="group().expanded ?? false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{ group().name }}</mat-panel-title>
   </mat-expansion-panel-header>
 
-  <ul class="items">
+  <mat-chip-set role="list" [attr.aria-label]="group().name">
     @for (skill of group().skills; track skill) {
-      <li>{{ skill }}</li>
+      <mat-chip role="listitem">{{ skill }}</mat-chip>
     }
-  </ul>
+  </mat-chip-set>
 </mat-expansion-panel>

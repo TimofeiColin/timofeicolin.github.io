@@ -1,11 +1,21 @@
-export interface Contact {
-  icon?: string;
-  svg?: string;
+interface ContactBase {
   label: string;
-  href: string;
+  href?: string;
 }
 
-export interface ProjectBlock {
+interface IconContact extends ContactBase {
+  icon: string;
+  svg?: never;
+}
+
+interface SvgContact extends ContactBase {
+  svg: string;
+  icon?: never;
+}
+
+export type Contact = IconContact | SvgContact;
+
+export interface Project {
   name?: string;
   bullets: string[];
 }
@@ -16,7 +26,7 @@ export interface Job {
   startDate: string;
   endDate: string;
   expanded?: boolean;
-  projects: ProjectBlock[];
+  projects: Project[];
 }
 
 export interface Education {
@@ -29,7 +39,7 @@ export interface Education {
 
 export interface Hobby {
   name: string;
-  elements?: string[];
+  items?: string[];
   images?: string[];
   expanded?: boolean;
 }

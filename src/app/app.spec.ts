@@ -26,12 +26,11 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    // The mat-icon ligature is a child of the <h2>, so it is part of textContent.
     const titles = Array.from(compiled.querySelectorAll('[ocv-section-title]')).map((el) => {
       const icon = el.querySelector('mat-icon')?.textContent?.trim() ?? '';
       return {
         icon,
-        label: (el.textContent ?? '').trim().slice(icon.length).trim()
+        label: (el.textContent ?? '').trim().slice(icon.length).trim(),
       };
     });
 
@@ -40,7 +39,7 @@ describe('App', () => {
       { icon: 'school', label: 'Education' },
       { icon: 'interests', label: 'Hobbies' },
       { icon: 'psychology', label: 'Technical Skills' },
-      { icon: 'public', label: 'Languages' }
+      { icon: 'public', label: 'Languages' },
     ]);
   });
 

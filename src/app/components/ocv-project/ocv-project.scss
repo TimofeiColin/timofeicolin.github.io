@@ -3,27 +3,5 @@
 }
 
 .name {
-  margin: 0.25em 0 0;
-}
-
-.bullets {
-  margin: 0;
-  padding-left: 1.05em;
-  list-style: none;
-}
-
-.bullets li {
-  position: relative;
-  margin: 0;
-}
-
-.bullets li::before {
-  content: "";
-  position: absolute;
-  top: 0.55em;
-  left: -0.78em;
-  width: 0.19em;
-  height: 0.19em;
-  border-radius: 50%;
-  background: currentcolor;
+  margin-top: 0.25em;
 }

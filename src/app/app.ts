@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { CV } from '../cv-data';
+import { CV } from '@src/cv-data';
 import { OcvHeader } from './components/ocv-header/ocv-header';
 import { OcvContact } from './components/ocv-contact/ocv-contact';
 import { OcvSummary } from './components/ocv-summary/ocv-summary';
@@ -12,7 +12,7 @@ import { OcvLanguage } from './components/ocv-language/ocv-language';
 import { OcvHobby } from './components/ocv-hobby/ocv-hobby';
 
 @Component({
-  selector: 'app-root',
+  selector: 'ocv-root',
   imports: [
     OcvHeader,
     OcvContact,
@@ -22,10 +22,10 @@ import { OcvHobby } from './components/ocv-hobby/ocv-hobby';
     OcvSectionTitle,
     OcvSkillGroup,
     OcvLanguage,
-    OcvHobby
+    OcvHobby,
   ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly cv = CV;

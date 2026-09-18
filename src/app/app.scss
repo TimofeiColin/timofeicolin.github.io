@@ -1,19 +1,9 @@
-// Layout values are derived by measuring the source PDF (A4, rendered at 150dpi):
-//   content width 1098px, left column 747px (68%), gutter 45px (4%), right column 308px (28%)
-//   accent rule #ff9401, empty proficiency dot #d9d9d9, all text pure black
-//   body glyph band 16px and line pitch 28px  ->  ~10.4pt at line-height 1.29 in print
-
 :host {
   display: block;
   padding: 28px 16px 56px;
 }
 
 .cv {
-  --accent: #ff9401;
-  --ink: #000;
-  --dot-off: #d9d9d9;
-  --rule: 2px;
-
   max-width: 900px;
   margin: 0 auto;
   padding: 46px 50px 56px;
@@ -23,18 +13,17 @@
   line-height: 1.45;
 }
 
-/* ---------------------------------------------------------- header */
+.intro {
+  max-width: 68%;
+}
 
 .contacts {
   display: grid;
-  grid-template-columns: 52% 48%;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
   gap: 0.62em 0;
-  margin: 0.65em 0 0;
-  padding: 0;
-  list-style: none;
+  margin-top: 0.65em;
 }
-
-/* ---------------------------------------------------------- columns */
 
 .cols {
   display: flex;
@@ -53,28 +42,13 @@
   min-width: 0;
 }
 
-/* ---------------------------------------------------------- sections */
-
 .section + .section {
   margin-top: 2.4em;
 }
 
-/* ---------------------------------------------------------- experience */
-
-ocv-job + ocv-job,
 ocv-education + ocv-education {
   margin-top: 1.1em;
 }
-
-/* ---------------------------------------------------------- side column */
-
-.langs {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* ---------------------------------------------------------- responsive */
 
 @media (max-width: 720px) {
   :host {
@@ -85,20 +59,33 @@ ocv-education + ocv-education {
     padding: 32px 22px 40px;
   }
 
+  .intro {
+    max-width: none;
+  }
+
   .contacts {
     grid-template-columns: 1fr;
   }
 
   .cols {
-    display: block;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .cols__main {
+    display: contents;
   }
 
   .cols__side {
+    flex: none;
     margin-top: 2.4em;
   }
-}
 
-/* ---------------------------------------------------------- print (A4) */
+  .section--hobbies {
+    order: 1;
+  }
+}
 
 @page {
   size: A4;
@@ -125,7 +112,6 @@ ocv-education + ocv-education {
     margin-top: 0;
   }
 
-  // Only the small blocks avoid breaking; a section can be taller than a page.
   ocv-job,
   ocv-education,
   ocv-skill-group,

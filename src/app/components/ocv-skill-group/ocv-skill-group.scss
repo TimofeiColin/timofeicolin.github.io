@@ -1,33 +1,39 @@
+@use '@angular/material' as mat;
+
 :host {
   display: block;
-  --mat-expansion-container-background-color: #fff;
-  padding-bottom: 10px;
+
+  @include mat.chips-overrides(
+    (
+      container-height: 1.6em,
+      container-shape-radius: 3px,
+      outline-color: #dcdcdc,
+      outline-width: 1px,
+      elevated-container-color: transparent,
+      label-text-font: inherit,
+      label-text-size: 0.9em,
+      label-text-line-height: 1.4,
+      label-text-weight: 400,
+      label-text-tracking: normal,
+      label-text-color: var(--ink),
+      hover-state-layer-opacity: 0,
+      focus-state-layer-opacity: 0,
+    )
+  );
 }
 
-.panel__header,
-.panel__header.mat-expanded {
-  height: auto;
-  min-height: 2.6em;
-  padding-block: 0.5em;
-  padding-inline: 0.9em;
-}
+:host ::ng-deep {
+  .mdc-evolution-chip-set .mdc-evolution-chip-set__chips {
+    gap: 0.3em;
+    margin: 0;
+  }
 
-.title {
-  margin: 0;
-  color: inherit;
-  font-size: inherit;
-}
+  .mdc-evolution-chip-set .mdc-evolution-chip {
+    margin: 0;
+  }
 
-.items {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.items li {
-  margin-bottom: 0.5em;
-}
-
-.items li:last-child {
-  margin-bottom: 0;
+  .mat-mdc-chip .mdc-evolution-chip__action--primary {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
 }

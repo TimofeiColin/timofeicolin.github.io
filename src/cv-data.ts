@@ -14,13 +14,13 @@ export const CV: Cv = {
 
   contacts: [
     { icon: 'mail', label: 'timofeicolin@gmail.com', href: 'mailto:timofeicolin@gmail.com' },
-    { icon: 'location_on', label: 'Chisinau, Moldova', href: '' },
+    { icon: 'location_on', label: 'Chisinau, Moldova' },
     { icon: 'call', label: '068920605', href: 'tel:068920605' },
     {
       svg: 'svg/linkedin.svg',
       label: 'linkedin.com/in/timofei-colin-2a490b53',
-      href: 'https://linkedin.com/in/timofei-colin-2a490b53'
-    }
+      href: 'https://linkedin.com/in/timofei-colin-2a490b53',
+    },
   ],
 
   jobs: [
@@ -37,8 +37,8 @@ export const CV: Cv = {
             'Maintained and expanded backend functionality',
             'Contributed to Chrome extension development',
             'Developed website features and pages',
-            'Participated in website redesign and performance optimization'
-          ]
+            'Participated in website redesign and performance optimization',
+          ],
         },
         {
           name: 'Yours Truly Project — Lead Backend Developer',
@@ -46,10 +46,10 @@ export const CV: Cv = {
             'Designed and developed backend logic',
             'Integrated APIs and third-party services',
             'Maintained scalable server-side architecture',
-            'Optimized system performance and data workflows'
-          ]
-        }
-      ]
+            'Optimized system performance and data workflows',
+          ],
+        },
+      ],
     },
     {
       company: 'Eligence',
@@ -64,8 +64,8 @@ export const CV: Cv = {
             'Rewrote the application backend from Ruby to NestJS',
             'Integrated third-party APIs and services',
             'Improved backend scalability and maintainability',
-            'Optimized application performance and system architecture'
-          ]
+            'Optimized application performance and system architecture',
+          ],
         },
         {
           name: 'Apprentice Project — Full-Stack Developer',
@@ -73,10 +73,10 @@ export const CV: Cv = {
             'Participated in website development',
             'Contributed to mobile application redesign',
             'Created interactive demos and platform features',
-            'Collaborated on frontend and backend improvements'
-          ]
-        }
-      ]
+            'Collaborated on frontend and backend improvements',
+          ],
+        },
+      ],
     },
     {
       company: 'KIVORK',
@@ -88,10 +88,10 @@ export const CV: Cv = {
           bullets: [
             'Customer Relations Supervisor',
             'Airline Communication Specialist',
-            'Payment Resolutions Supervisor'
-          ]
-        }
-      ]
+            'Payment Resolutions Supervisor',
+          ],
+        },
+      ],
     },
     {
       company: 'Dyninno Moldova',
@@ -100,10 +100,10 @@ export const CV: Cv = {
       endDate: '08/2016',
       projects: [
         {
-          bullets: ['Schedule Changes Specialist', 'Customer Support Specialist']
-        }
-      ]
-    }
+          bullets: ['Schedule Changes Specialist', 'Customer Support Specialist'],
+        },
+      ],
+    },
   ],
 
   education: [
@@ -112,15 +112,14 @@ export const CV: Cv = {
       degree: 'Bachelor of Science, Applied Computing',
       startDate: '09/2013',
       endDate: '06/2016',
-      location: 'Chisinau, Moldova'
-    }
+      location: 'Chisinau, Moldova',
+    },
   ],
 
   hobbies: [
     {
       name: 'Running',
-      expanded: false,
-      elements: [
+      items: [
         'Chisinau Marathon (2024)',
         'Rimini Marathon (2025)',
         'Volvo Ultra Race (2025)',
@@ -134,28 +133,28 @@ export const CV: Cv = {
         'Volvo Ultra Race (2026)',
         'Purcari Night Run (2026)',
         'Colinele Mircesti Run (2026)',
-        'Chisinau Marathon (2026)'
-      ]
+        'Chisinau Marathon (2026)',
+      ],
     },
     {
       name: 'Board Games',
-      expanded: false,
-      elements: [
-        'Admin at CC151 Mafia Club since December 2025'
-      ]
+      items: ['Admin at CC151 Mafia Club since December 2025'],
     },
     {
       name: 'Making Cakes',
-      expanded: false,
-      images: [
-        'photos/cake.jpg'
-      ]
-    }
+      images: ['photos/cake.jpg'],
+    },
   ],
 
   skills: [
     {
+      name: 'Programming',
+      expanded: true,
+      skills: ['TypeScript', 'JavaScript'],
+    },
+    {
       name: 'Backend',
+      expanded: true,
       skills: [
         'Node.js',
         'NestJS',
@@ -168,70 +167,43 @@ export const CV: Cv = {
         'Caching',
         'Background Jobs',
         'BullMQ',
-      ]
+      ],
     },
     {
       name: 'Databases & Data',
-      skills: [
-        'PostgreSQL',
-        'Prisma',
-        'TypeORM',
-        'MongoDB',
-        'Mongoose',
-        'Redis',
-      ]
+      expanded: true,
+      skills: ['PostgreSQL', 'Prisma', 'TypeORM', 'MongoDB', 'Mongoose', 'Redis'],
     },
     {
       name: 'Cloud & Infrastructure',
-      skills: [
-        'AWS',
-        'Amazon S3',
-        'Docker',
-        'Git',
-        'CI/CD',
-      ]
+      expanded: true,
+      skills: ['AWS', 'Amazon S3', 'Docker', 'Git', 'CI/CD'],
     },
     {
       name: 'AI & Integrations',
-      skills: [
-        'OpenAI API',
-        'Langflow',
-        'Google APIs',
-        'Google Admin SDK',
-        'Stripe',
-        'SendGrid',
-      ]
+      expanded: true,
+      skills: ['OpenAI API', 'Langflow', 'Google APIs', 'Google Admin SDK', 'Stripe', 'SendGrid'],
     },
     {
       name: 'AI Development Tools',
-      skills: [
-        'Claude Code',
-        'ChatGPT',
-        'GitHub Copilot',
-      ]
+      expanded: true,
+      skills: ['Claude Code', 'ChatGPT', 'GitHub Copilot'],
     },
     {
       name: 'Frontend',
-      skills: [
-        'Angular',
-        'React',
-        'HTML5',
-        'CSS3',
-        'Tailwind CSS',
-      ]
+      expanded: true,
+      skills: ['Angular', 'React', 'HTML5', 'CSS3', 'Tailwind CSS'],
     },
     {
-      name: 'Programming',
-      skills: [
-        'TypeScript',
-        'JavaScript',
-      ]
+      name: 'Currently Learning',
+      expanded: true,
+      skills: ['C#', '.NET'],
     },
   ],
 
   languages: [
     { name: 'Romanian', level: 5 },
     { name: 'Russian', level: 5 },
-    { name: 'English', level: 4 }
-  ]
+    { name: 'English', level: 4 },
+  ],
 };
