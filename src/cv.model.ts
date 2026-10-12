@@ -4,6 +4,11 @@ export type Lang = (typeof LANGS)[number];
 
 export type LangString = string | Record<Lang, string>;
 
+export type TitledSection<T> = {
+  title: string;
+  content: T;
+};
+
 export type Localized<T> = T extends string
   ? LangString
   : T extends readonly (infer U)[]
@@ -74,11 +79,11 @@ export interface Cv {
   position: string;
   summary: string;
   contacts: Contact[];
-  jobs: Job[];
-  education: Education[];
-  skills: SkillGroup[];
-  hobbies: Hobby[];
-  languages: Language[];
+  jobs: TitledSection<Job[]>;
+  education: TitledSection<Education[]>;
+  skills: TitledSection<SkillGroup[]>;
+  hobbies: TitledSection<Hobby[]>;
+  languages: TitledSection<Language[]>;
 }
 
 export type CvSource = Localized<Cv>;

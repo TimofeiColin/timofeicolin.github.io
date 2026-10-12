@@ -34,25 +34,25 @@
   <div class="cols">
     <div class="cols__main">
       <section class="section">
-        <h2 ocv-section-title icon="work">Professional Experience</h2>
+        <h2 ocv-section-title icon="work">{{ cv().jobs.title }}</h2>
 
-        @for (job of cv().jobs; track job.company) {
+        @for (job of cv().jobs.content; track job.company) {
           <ocv-job [job]="job" />
         }
       </section>
 
       <section class="section">
-        <h2 ocv-section-title icon="school">Education</h2>
+        <h2 ocv-section-title icon="school">{{ cv().education.title }}</h2>
 
-        @for (e of cv().education; track e.school) {
+        @for (e of cv().education.content; track e.school) {
           <ocv-education [education]="e" />
         }
       </section>
 
       <section class="section section--hobbies">
-        <h2 ocv-section-title icon="interests">Hobbies</h2>
+        <h2 ocv-section-title icon="interests">{{ cv().hobbies.title }}</h2>
 
-        @for (hobby of cv().hobbies; track hobby.name) {
+        @for (hobby of cv().hobbies.content; track hobby.name) {
           <ocv-hobby [hobby]="hobby" />
         }
       </section>
@@ -60,17 +60,17 @@
 
     <aside class="cols__side">
       <section class="section">
-        <h2 ocv-section-title icon="psychology">Technical Skills</h2>
+        <h2 ocv-section-title icon="psychology">{{ cv().skills.title }}</h2>
 
-        @for (group of cv().skills; track group.name) {
+        @for (group of cv().skills.content; track group.name) {
           <ocv-skill-group [group]="group" />
         }
       </section>
 
       <section class="section">
-        <h2 ocv-section-title icon="public">Languages</h2>
+        <h2 ocv-section-title icon="public">{{ cv().languages.title }}</h2>
         <ul>
-          @for (language of cv().languages; track language.name) {
+          @for (language of cv().languages.content; track language.name) {
             <li ocv-language [language]="language"></li>
           }
         </ul>
