@@ -348,4 +348,9 @@ export const CV: CvSource = {
       { name: { en: 'English', ro: 'Engleză', ru: 'Английский' }, level: 4 },
     ],
   },
+
+  updated: {
+    title: { en: 'Last updated', ro: 'Ultima actualizare', ru: 'Обновлено' },
+    content: '2026-10-12',
+  },
 };

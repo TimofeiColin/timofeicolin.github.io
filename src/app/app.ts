@@ -13,6 +13,7 @@ import { OcvSkillGroup } from './components/ocv-skill-group/ocv-skill-group';
 import { OcvLanguage } from './components/ocv-language/ocv-language';
 import { OcvHobby } from './components/ocv-hobby/ocv-hobby';
 import { OcvButton } from './components/ocv-button/ocv-button';
+import { OcvUpdated } from './components/ocv-updated/ocv-updated';
 
 const LANG_PARAM = 'lang';
 const DEFAULT_LANG: Lang = 'en';
@@ -44,6 +45,7 @@ function isTheme(value: string | null): value is Theme {
     OcvLanguage,
     OcvHobby,
     OcvButton,
+    OcvUpdated,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

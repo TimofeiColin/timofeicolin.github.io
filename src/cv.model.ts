@@ -84,6 +84,7 @@ export interface Cv {
   skills: TitledSection<SkillGroup[]>;
   hobbies: TitledSection<Hobby[]>;
   languages: TitledSection<Language[]>;
+  updated: TitledSection<string>;
 }
 
 export type CvSource = Localized<Cv>;
