@@ -14,7 +14,7 @@
   @if (hobby().images?.length) {
     <div class="images">
       @for (src of hobby().images; track src) {
-        <img [src]="src" [alt]="hobby().name" />
+        <img [src]="src" [alt]="hobby().name" loading="lazy" />
       }
     </div>
   }

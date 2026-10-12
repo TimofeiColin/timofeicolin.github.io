@@ -146,10 +146,28 @@ ocv-education + ocv-education {
     display: none;
   }
 
-  ocv-job,
   ocv-education,
   ocv-skill-group,
   ocv-hobby {
     break-inside: avoid;
+  }
+
+  ocv-job .mat-expansion-panel-header {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  ocv-project .name {
+    break-after: avoid;
+  }
+
+  li {
+    break-inside: avoid;
+  }
+
+  p,
+  li {
+    orphans: 2;
+    widows: 2;
   }
 }
