@@ -18,8 +18,14 @@
   );
 }
 
-@media print {
-  :host {
-    display: none;
-  }
+button.active {
+  border-color: var(--accent);
+
+  @include mat.button-overrides(
+    (
+      outlined-outline-color: var(--accent),
+      outlined-label-text-color: var(--accent),
+      outlined-label-text-weight: 600,
+    )
+  );
 }

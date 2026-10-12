@@ -13,14 +13,26 @@
   line-height: 1.45;
 }
 
-header {
-  position: relative;
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  /* Negative inline margins bleed the bar to the card edges, so content
+     scrolling underneath is covered across the card's full width. */
+  margin: -46px -50px 2.2em;
+  padding: 0.6em 50px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
 }
 
-ocv-print-button {
-  position: absolute;
-  top: 0;
-  right: 0;
+.bar__langs {
+  display: flex;
+  gap: 6px;
 }
 
 .intro {
@@ -69,11 +81,9 @@ ocv-education + ocv-education {
     padding: 32px 22px 40px;
   }
 
-  ocv-print-button {
-    position: static;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 0.5em;
+  .bar {
+    margin: -32px -22px 2em;
+    padding-inline: 22px;
   }
 
   .intro {
@@ -112,6 +122,10 @@ ocv-education + ocv-education {
 @media print {
   :host {
     padding: 0;
+  }
+
+  .bar {
+    display: none;
   }
 
   .cv {

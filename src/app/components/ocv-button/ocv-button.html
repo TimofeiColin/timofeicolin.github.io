@@ -1,0 +1,6 @@
+<button mat-stroked-button type="button" [class.active]="active()" (click)="action.emit()">
+  @if (icon()) {
+    <mat-icon>{{ icon() }}</mat-icon>
+  }
+  {{ label() }}
+</button>

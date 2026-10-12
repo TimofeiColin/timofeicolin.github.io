@@ -5,3 +5,12 @@
 .name {
   margin-top: 0.25em;
 }
+
+.bullets.dotted li::before {
+  content: none;
+}
+
+.dot {
+  position: absolute;
+  left: -1.05em;
+}

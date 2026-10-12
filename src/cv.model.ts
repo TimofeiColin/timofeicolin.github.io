@@ -1,3 +1,17 @@
+export const LANGS = ['ro', 'ru', 'en'] as const;
+
+export type Lang = (typeof LANGS)[number];
+
+export type LangString = string | Record<Lang, string>;
+
+export type Localized<T> = T extends string
+  ? LangString
+  : T extends readonly (infer U)[]
+    ? Localized<U>[]
+    : T extends object
+      ? { [K in keyof T]: Localized<T[K]> }
+      : T;
+
 interface ContactBase {
   label: string;
   href?: string;
@@ -66,3 +80,5 @@ export interface Cv {
   hobbies: Hobby[];
   languages: Language[];
 }
+
+export type CvSource = Localized<Cv>;
