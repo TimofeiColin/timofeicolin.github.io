@@ -2,15 +2,19 @@
   <div class="bar">
     <div class="bar__langs">
       @for (l of langs; track l) {
-        <ocv-button
-          [label]="l.toUpperCase()"
-          [active]="lang() === l"
-          (action)="setLang(l)"
-        />
+        <ocv-button [label]="l.toUpperCase()" [active]="lang() === l" (action)="setLang(l)" />
       }
     </div>
 
-    <ocv-button label="Print / PDF" icon="print" (action)="print()" />
+    <div class="bar__actions">
+      <ocv-button label="Print / PDF" icon="print" (action)="print()" />
+
+      <ocv-button
+        [label]="theme() === 'dark' ? 'Light' : 'Dark'"
+        [icon]="theme() === 'dark' ? 'light_mode' : 'dark_mode'"
+        (action)="toggleTheme()"
+      />
+    </div>
   </div>
 
   <header>

@@ -14,24 +14,45 @@ html {
   );
 }
 
-body {
+:root {
   color-scheme: light;
+  --accent: #ff9401;
+  --page: #fff;
+  --paper: #fff;
+  --ink: #000;
+  --border: #e8e8e8;
+  --outline: #dcdcdc;
+  --dot-off: #d9d9d9;
+  --state: rgb(0 0 0 / 10%);
+}
+
+@media screen {
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --page: #232830;
+    --paper: #2b303b;
+    --ink: #fff;
+    --border: #343d46;
+    --outline: #4f5b66;
+    --dot-off: #4f5b66;
+    --state: rgb(255 255 255 / 12%);
+  }
+}
+
+body {
   margin: 0;
   min-height: 100%;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--page);
+  color: var(--ink);
   font-family: Alegreya, Georgia, 'Times New Roman', serif;
 }
 
 .cv {
-  --accent: #ff9401;
-  --ink: #000;
-  --dot-off: #d9d9d9;
   --rule: 2px;
 
   @include mat.expansion-overrides(
     (
-      container-background-color: #fff,
+      container-background-color: var(--paper),
       container-shape: 0,
       container-elevation-shadow: none,
       header-indicator-color: var(--ink),
@@ -70,7 +91,7 @@ body {
   }
 
   .mat-expansion-panel {
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--border);
   }
 
   .mat-expansion-panel-header,

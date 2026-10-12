@@ -7,7 +7,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 46px 50px 56px;
-  background: #fff;
+  background: var(--paper);
   color: var(--ink);
   font-size: 15px;
   line-height: 1.45;
@@ -22,15 +22,14 @@
   justify-content: space-between;
   gap: 12px;
 
-  /* Negative inline margins bleed the bar to the card edges, so content
-     scrolling underneath is covered across the card's full width. */
   margin: -46px -50px 2.2em;
   padding: 0.6em 50px;
-  background: #fff;
-  border-bottom: 1px solid #e8e8e8;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
 }
 
-.bar__langs {
+.bar__langs,
+.bar__actions {
   display: flex;
   gap: 6px;
 }
