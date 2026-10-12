@@ -81,8 +81,13 @@ ocv-education + ocv-education {
   }
 
   .bar {
+    flex-wrap: wrap;
     margin: -32px -22px 2em;
     padding-inline: 22px;
+  }
+
+  .bar__actions {
+    flex: 1 0 100%;
   }
 
   .intro {
