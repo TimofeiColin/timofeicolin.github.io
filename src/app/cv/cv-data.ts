@@ -351,6 +351,6 @@ export const CV: CvSource = {
 
   updated: {
     title: { en: 'Last updated', ro: 'Ultima actualizare', ru: 'Обновлено' },
-    content: '2026-10-12',
+    content: '2026-10-16',
   },
 };
