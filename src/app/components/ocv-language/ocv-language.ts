@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import { Language } from '@src/cv.model';
+import { Language } from '@src/app/cv';
 
 const DOT_COUNT = 5;
 

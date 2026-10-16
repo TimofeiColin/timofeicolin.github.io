@@ -1,6 +1,34 @@
-<button mat-stroked-button type="button" [class.active]="active()" (click)="action.emit()">
-  @if (icon()) {
-    <mat-icon>{{ icon() }}</mat-icon>
-  }
-  {{ label() }}
-</button>
+<!-- Content is repeated rather than shared via ng-template: mat-button only slots
+     the icon into place when it is a direct child in this template. -->
+@if (href(); as href) {
+  <a
+    mat-stroked-button
+    [href]="href"
+    [attr.download]="download() ?? null"
+    [class.active]="active()"
+    [class.icon-only]="!label()"
+    (click)="action.emit()"
+  >
+    @if (icon()) {
+      <mat-icon>{{ icon() }}</mat-icon>
+    }
+    @if (label()) {
+      {{ label() }}
+    }
+  </a>
+} @else {
+  <button
+    mat-stroked-button
+    type="button"
+    [class.active]="active()"
+    [class.icon-only]="!label()"
+    (click)="action.emit()"
+  >
+    @if (icon()) {
+      <mat-icon>{{ icon() }}</mat-icon>
+    }
+    @if (label()) {
+      {{ label() }}
+    }
+  </button>
+}

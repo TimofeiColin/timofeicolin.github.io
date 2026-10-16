@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-import { Hobby } from '@src/cv.model';
+import { Hobby } from '@src/app/cv';
 
 @Component({
   selector: 'ocv-hobby',

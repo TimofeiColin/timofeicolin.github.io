@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import { Project } from '@src/cv.model';
+import { Project } from '@src/app/cv';
 
 @Component({
   selector: 'ocv-project',

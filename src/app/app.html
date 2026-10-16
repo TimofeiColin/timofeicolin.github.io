@@ -7,11 +7,10 @@
     </div>
 
     <div class="bar__actions">
-      <ocv-button label="Print / PDF" icon="print" (action)="print()" />
+      <ocv-button label="Download PDF" icon="download" [href]="pdfHref()" [download]="pdfName()" />
 
       <ocv-button
-        [label]="theme() === 'dark' ? 'Light' : 'Dark'"
-        [icon]="theme() === 'dark' ? 'light_mode' : 'dark_mode'"
+        [icon]="theme() === darkTheme ? 'light_mode' : 'dark_mode'"
         (action)="toggleTheme()"
       />
     </div>

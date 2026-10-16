@@ -13,6 +13,18 @@ function buttonLabelled(root: HTMLElement, label: string): HTMLButtonElement {
   return button;
 }
 
+/** Finds a bar button by the name of its icon. */
+function buttonWithIcon(root: HTMLElement, icon: string): HTMLButtonElement {
+  const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('ocv-button button'));
+  const button = buttons.find((b) => b.querySelector('mat-icon')?.textContent?.trim() === icon);
+
+  if (!button) {
+    throw new Error(`No button with icon "${icon}"`);
+  }
+
+  return button;
+}
+
 describe('App', () => {
   beforeEach(async () => {
     localStorage.clear();
@@ -74,14 +86,21 @@ describe('App', () => {
     expect(english.querySelectorAll('.dot--off').length).toBe(1);
   });
 
-  it('should open the print dialog from the print button', async () => {
+  it('should link the PDF button to the PDF for the current language', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
-    const print = vi.spyOn(window, 'print').mockImplementation(() => {});
     const compiled = fixture.nativeElement as HTMLElement;
-    buttonLabelled(compiled, 'Print / PDF').click();
-    expect(print).toHaveBeenCalledOnce();
-    print.mockRestore();
+    const link = compiled.querySelector<HTMLAnchorElement>('ocv-button a[download]');
+
+    expect(link?.textContent?.trim()).toMatch(/Download PDF$/);
+    expect(link?.getAttribute('href')).toBe('cv-en.pdf');
+    expect(link?.getAttribute('download')).toBe('Timofei-Colin-CV-EN.pdf');
+
+    buttonLabelled(compiled, 'RO').click();
+    await fixture.whenStable();
+
+    expect(link?.getAttribute('href')).toBe('cv-ro.pdf');
+    expect(link?.getAttribute('download')).toBe('Timofei-Colin-CV-RO.pdf');
   });
 
   it('should toggle dark mode and remember the choice', async () => {
@@ -91,13 +110,13 @@ describe('App', () => {
 
     expect(document.documentElement.dataset['theme']).toBe('light');
 
-    buttonLabelled(compiled, 'Dark').click();
+    buttonWithIcon(compiled, 'dark_mode').click();
     await fixture.whenStable();
 
     expect(document.documentElement.dataset['theme']).toBe('dark');
     expect(localStorage.getItem('ocv-theme')).toBe('dark');
 
-    buttonLabelled(compiled, 'Light').click();
+    buttonWithIcon(compiled, 'light_mode').click();
     await fixture.whenStable();
 
     expect(document.documentElement.dataset['theme']).toBe('light');

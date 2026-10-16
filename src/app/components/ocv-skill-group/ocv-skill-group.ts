@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-import { SkillGroup } from '@src/cv.model';
+import { SkillGroup } from '@src/app/cv';
 
 @Component({
   selector: 'ocv-skill-group',

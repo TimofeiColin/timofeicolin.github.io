@@ -1,9 +1,10 @@
-import { Cv, CvSource, LANGS, Lang } from './cv.model';
+import { Lang, isLang } from '../common/lang';
+import { Cv, CvSource } from './cv.model';
 
 function isLangRecord(value: object): value is Record<Lang, string> {
   const keys = Object.keys(value);
 
-  return keys.length > 0 && keys.every((key) => (LANGS as readonly string[]).includes(key));
+  return keys.length > 0 && keys.every((key) => isLang(key));
 }
 
 function resolve(value: unknown, lang: Lang): unknown {

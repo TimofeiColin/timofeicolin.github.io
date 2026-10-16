@@ -1,36 +1,21 @@
 import { Component, DOCUMENT, DestroyRef, computed, effect, inject, signal } from '@angular/core';
 
-import { CV } from '@src/cv-data';
-import { LANGS, Lang } from '@src/cv.model';
-import { localizeCv } from '@src/cv-localize';
-import { OcvHeader } from './components/ocv-header/ocv-header';
-import { OcvContact } from './components/ocv-contact/ocv-contact';
-import { OcvSummary } from './components/ocv-summary/ocv-summary';
-import { OcvJob } from './components/ocv-job/ocv-job';
-import { OcvEducation } from './components/ocv-education/ocv-education';
-import { OcvSectionTitle } from './components/ocv-section-title/ocv-section-title';
-import { OcvSkillGroup } from './components/ocv-skill-group/ocv-skill-group';
-import { OcvLanguage } from './components/ocv-language/ocv-language';
-import { OcvHobby } from './components/ocv-hobby/ocv-hobby';
-import { OcvButton } from './components/ocv-button/ocv-button';
-import { OcvUpdated } from './components/ocv-updated/ocv-updated';
-
-const LANG_PARAM = 'lang';
-const DEFAULT_LANG: Lang = 'en';
-
-const THEME_KEY = 'ocv-theme';
-const THEMES = ['light', 'dark'] as const;
-type Theme = (typeof THEMES)[number];
-
-const DARK_QUERY = '(prefers-color-scheme: dark)';
-
-function isLang(value: string | null): value is Lang {
-  return value !== null && (LANGS as readonly string[]).includes(value);
-}
-
-function isTheme(value: string | null): value is Theme {
-  return value !== null && (THEMES as readonly string[]).includes(value);
-}
+import { CV, localizeCv } from '@src/app/cv';
+import {
+  OcvButton,
+  OcvContact,
+  OcvEducation,
+  OcvHeader,
+  OcvHobby,
+  OcvJob,
+  OcvLanguage,
+  OcvSectionTitle,
+  OcvSkillGroup,
+  OcvSummary,
+  OcvUpdated,
+} from './components';
+import { DEFAULT_LANG, LANGS, LANG_PARAM, Lang, isLang } from './common/lang';
+import { DARK_QUERY, DARK_THEME, LIGHT_THEME, THEME_KEY, Theme, isTheme } from './common/theme';
 
 @Component({
   selector: 'ocv-root',
@@ -55,9 +40,15 @@ export class App {
   private readonly destroyRef = inject(DestroyRef);
 
   protected readonly langs = LANGS;
+  protected readonly darkTheme = DARK_THEME;
   protected readonly lang = signal(this.langFromUrl());
   protected readonly cv = computed(() => localizeCv(CV, this.lang()));
   protected readonly theme = signal(this.storedTheme() ?? this.systemTheme());
+  
+  protected readonly pdfHref = computed(() => `cv-${this.lang()}.pdf`);
+  protected readonly pdfName = computed(
+    () => `${this.cv().name.replaceAll(' ', '-')}-CV-${this.lang().toUpperCase()}.pdf`,
+  );
 
   constructor() {
     effect(() => {
@@ -79,7 +70,7 @@ export class App {
   }
 
   protected toggleTheme(): void {
-    const next: Theme = this.theme() === 'dark' ? 'light' : 'dark';
+    const next: Theme = this.theme() === DARK_THEME ? LIGHT_THEME : DARK_THEME;
 
     this.theme.set(next);
     this.writeStoredTheme(next);
@@ -132,7 +123,7 @@ export class App {
   }
 
   private systemTheme(): Theme {
-    return this.darkQuery()?.matches ? 'dark' : 'light';
+    return this.darkQuery()?.matches ? DARK_THEME : LIGHT_THEME;
   }
 
   private followSystemTheme(): void {
@@ -144,15 +135,11 @@ export class App {
 
     const onChange = (event: MediaQueryListEvent): void => {
       if (!this.storedTheme()) {
-        this.theme.set(event.matches ? 'dark' : 'light');
+        this.theme.set(event.matches ? DARK_THEME : LIGHT_THEME);
       }
     };
 
     query.addEventListener('change', onChange);
     this.destroyRef.onDestroy(() => query.removeEventListener('change', onChange));
-  }
-
-  protected print(): void {
-    this.document.defaultView?.print();
   }
 }

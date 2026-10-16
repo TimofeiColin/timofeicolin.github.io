@@ -36,4 +36,14 @@
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
+
+  .mat-mdc-standard-chip {
+    height: auto;
+    min-height: 1.6em;
+  }
+
+  .mdc-evolution-chip__text-label {
+    padding-block: 0.15em;
+    white-space: normal;
+  }
 }

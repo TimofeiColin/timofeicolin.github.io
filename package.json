@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "og": "node scripts/og-image.mjs",
+    "pdf": "node scripts/cv-pdf.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier --write \"src/**/*.{ts,html,scss}\"",

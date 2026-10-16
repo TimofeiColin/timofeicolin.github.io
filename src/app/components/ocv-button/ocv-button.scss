@@ -18,7 +18,7 @@
   );
 }
 
-button.active {
+.active {
   border-color: var(--accent);
 
   @include mat.button-overrides(
@@ -26,6 +26,18 @@ button.active {
       outlined-outline-color: var(--accent),
       outlined-label-text-color: var(--accent),
       outlined-label-text-weight: 600,
+    )
+  );
+}
+
+.icon-only {
+  min-width: 0;
+
+  @include mat.button-overrides(
+    (
+      outlined-horizontal-padding: 11px,
+      outlined-icon-spacing: 0,
+      outlined-icon-offset: 0,
     )
   );
 }

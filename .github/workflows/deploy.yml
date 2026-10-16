@@ -30,8 +30,9 @@ jobs:
 
       - run: npm run build
 
-      # Renders og.png from the built CV so the link preview can never go stale.
       - run: npm run og
+
+      - run: npm run pdf
 
       - uses: actions/configure-pages@v5
 

@@ -1,8 +1,4 @@
-export const LANGS = ['ro', 'ru', 'en'] as const;
-
-export type Lang = (typeof LANGS)[number];
-
-export type LangString = string | Record<Lang, string>;
+import { LangString } from '../common/lang';
 
 export type TitledSection<T> = {
   title: string;
