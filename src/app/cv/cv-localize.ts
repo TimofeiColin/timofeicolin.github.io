@@ -1,4 +1,4 @@
-import { Lang, isLang } from '../common/lang';
+import { Lang, isLang } from '@common/lang';
 import { Cv, CvSource } from './cv.model';
 
 function isLangRecord(value: object): value is Record<Lang, string> {

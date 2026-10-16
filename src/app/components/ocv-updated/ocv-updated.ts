@@ -1,7 +1,7 @@
 import { Component, computed, input } from '@angular/core';
 
-import { Lang } from '../../common/lang';
-import { formatDate } from '../../common/time';
+import { Lang } from '@common/lang';
+import { formatDate } from '@common/time';
 
 @Component({
   selector: 'ocv-updated',

@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-import { Job } from '@src/app/cv';
+import { Job } from '@cv';
 import { OcvProject } from '../ocv-project/ocv-project';
 
 @Component({

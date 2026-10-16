@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import { Education } from '@src/app/cv';
+import { Education } from '@cv';
 
 @Component({
   selector: 'ocv-education',

@@ -1,4 +1,4 @@
-import { LangString } from '../common/lang';
+import { LangString } from '@common/lang';
 
 export type TitledSection<T> = {
   title: string;

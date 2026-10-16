@@ -1,4 +1,4 @@
 export * from './types';
-export * from './locales';
-export * from './defaults';
-export * from './helper';
+export * from './consts';
+export * from './helpers';
+export * from './lang-service';

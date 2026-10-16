@@ -1,4 +1,4 @@
-import { LOCALES, Lang } from '../lang';
+import { LOCALES, Lang } from '@common/lang';
 
 export function formatDate(date: string, lang: Lang): string {
   return new Intl.DateTimeFormat(LOCALES[lang], {

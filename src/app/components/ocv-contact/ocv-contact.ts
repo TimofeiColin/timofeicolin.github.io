@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
-import { Contact } from '@src/app/cv';
+import { Contact } from '@cv';
 
 @Component({
   selector: 'li[ocv-contact]',
